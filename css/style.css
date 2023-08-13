@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    /* display: grid; */
+    display: flex;
+    /* margin: 10px; */
+    place-items: center;
+    background-color: #222831;
+    overflow: hidden;
+  }
+  
+  #wheelOfFortune {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    
+  }
+  
+  #wheel {
+    display: block;
+  }
+  
+  #spin {
+    font: 1.5em/0 sans-serif;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    width: 20%;
+    height: 20%;
+    margin: -15%;
+    background: #DDDDDD;
+    color: orange;
+    box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transition: 0.8s;
+  }
+  
+  #spin::after {
+    content: '';
+    position: absolute;
+    top: -17px;
+    border: 10px solid transparent;
+    border-bottom-color: currentColor;
+    border-top: none;
+  }
+  
+  #video {
+    width: 100%;
+    margin-left: 200px;
+  }
+
+  #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.3;
+    z-index: -1;
+  }
