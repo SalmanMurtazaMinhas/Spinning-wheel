@@ -120,14 +120,47 @@
 //   });
 
 const names = [
-  { color: '#f82', label: 'Stack' },
-  { color: '#0bf', label: '10' },
-  { color: '#fb0', label: '200' },
+  // { color: '#f82', label: 'Stack' },
+  // { color: '#0bf', label: '10' },
+  // { color: '#fb0', label: '200' },
   // { color: '#0fb', label: '50' },
   // { color: '#b0f', label: '100' },
   // { color: '#f0b', label: '5' },
-  // { color: '#bf0', label: '500' }
+  // { color: '#bf0', label: '500' },
+    {color: 'lightgreen', label: 'Salman' },
+    {color: 'yellow', label: 'Ahmed' },
+    {color: 'lightblue', label: 'Raees' },
+    {color: 'pink', label: 'Rawan' },
+    {color: 'lightgreen', label: 'Asad' },
+    {color: 'yellow', label: 'Umer' },
+    {color: 'lightblue', label: 'Zaineb' },
+    {color: 'pink', label: 'Aziz' },
+    {color: 'lightgreen', label: 'Ali' },
+    {color: 'yellow', label: 'Ali' },
+    {color: 'lightblue', label: 'Ahmed' },
+    {color: 'pink', label: 'Rawan' },
+    {color: 'lightgreen', label: 'Ahmed' },
+    {color: 'yellow', label: 'Rawan' },
+    {color: 'lightblue', label: 'Zaineb' },
+    {color: 'pink', label: 'Zaineb' },
+    {color: 'lightgreen', label: 'Ali' },
+    {color: 'yellow', label: 'Ali' },
+    {color: 'lightblue', label: 'Ahmed' },
+    {color: 'pink', label: 'Rawan' },
+    {color: 'lightgreen', label: 'Ahmed' },
+    {color: 'yellow', label: 'Rawan' },
+    {color: 'lightblue', label: 'Zaineb' },
+    {color: 'pink', label: 'Zaineb' },
+    {color: 'lightgreen', label: 'Ali' },
+    {color: 'yellow', label: 'Ali' },
+    {color: 'lightblue', label: 'Ahmed' },
+    {color: 'pink', label: 'Rawan' },
+    {color: 'lightgreen', label: 'Ahmed' },
+    {color: 'yellow', label: 'Rawan' },
+
 ]
+const newArray = [];
+const list = document.querySelector('#list')
 
 const rand = (m, M) => Math.random() * (M - m) + m
 const tot = names.length
@@ -139,37 +172,49 @@ const PI = Math.PI
 const TAU = 2 * PI
 const arc = TAU / names.length
 
-const friction = 0.991 // 0.995=soft, 0.99=mid, 0.98=hard
+const friction = 0.95 // 0.995=soft, 0.99=mid, 0.98=hard
 let angVel = 0 // Angular velocity
 let ang = 0 // Angle in radians
 
-const getIndex = () => Math.floor(tot - (ang / TAU) * tot) % tot
+
+const getIndex = () => Math.floor(names.length - (ang / TAU) * names.length) % names.length
+// console.log(tot)
 
   function stopSpinning() {
-    const slice = names[getIndex()];
-    // alert(slice.value)
-    console.log('Landed on', slice.value);
+    const name = names[getIndex()];
+    // alert(name.label)
+    console.log('Landed on', name.label);
+    let lastName = name.label
+    newArray.push(lastName)
+    console.log(newArray)
+    let li = document.createElement("li");
+    li.appendChild(document.createTextNode(lastName))
+    list.appendChild(li);
+    console.log(list)
     names.splice(getIndex(),1)
     // elemVideo.setAttribute('src', '/');
-    console.log(names)
+    // console.log(names)
+    // console.log(tot)
     init()
+    window.location()
   }
 
 function drawName(name, i) {
-  const ang = arc * i
+  const ang = TAU / names.length * i
   ctx.save()
   // COLOR
   ctx.beginPath()
   ctx.fillStyle = name.color
   ctx.moveTo(rad, rad)
-  ctx.arc(rad, rad, rad, ang, ang + arc)
+  ctx.arc(rad, rad, rad, ang, ang + TAU / names.length)
   ctx.lineTo(rad, rad)
   ctx.fill()
   // TEXT
   ctx.translate(rad, rad)
-  ctx.rotate(ang + arc / 2)
+  ctx.rotate(ang + (TAU / names.length) / 2)
+  // console.log(ang)
   ctx.textAlign = 'right'
-  ctx.fillStyle = '#fff'
+  ctx.fillStyle = '#595B83'
   ctx.font = 'bold 30px sans-serif'
   ctx.fillText(name.label, rad - 10, 10)
   //
@@ -179,6 +224,7 @@ function drawName(name, i) {
 function rotate() {
   const name = names[getIndex()]
   ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`
+  // console.log(ang)
   spinEl.textContent = !angVel ? 'SPIN' : name.label
   spinEl.style.background = name.color
 }
@@ -207,7 +253,7 @@ function init() {
   rotate() // Initial rotation
   engine() // Start engine
   spinEl.addEventListener('click', () => {
-    if (!angVel) angVel = rand(0.25, 0.45)
+    if (!angVel) angVel = rand(0.45, 0.65)
   })
 }
 

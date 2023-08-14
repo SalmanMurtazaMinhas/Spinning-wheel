@@ -69,3 +69,19 @@
     opacity: 0.3;
     z-index: -1;
   }
+
+  #list {
+    background-color: #22283158;
+    color: #DDDDDD;
+    font-size: 20px;
+    margin-right: 250px;
+    height: 90vh;
+    width: 300px;
+    padding: 0px 70px;
+  }
+
+  li {
+    /* background-color: aqua; */
+    height: 20px;
+    margin: 2px;
+  }
