@@ -127,36 +127,36 @@ const names = [
   // { color: '#b0f', label: '100' },
   // { color: '#f0b', label: '5' },
   // { color: '#bf0', label: '500' },
-    {color: 'lightgreen', label: 'Salman' },
-    {color: 'yellow', label: 'Ahmed' },
-    {color: 'lightblue', label: 'Raees' },
-    {color: 'pink', label: 'Rawan' },
-    {color: 'lightgreen', label: 'Asad' },
-    {color: 'yellow', label: 'Umer' },
-    {color: 'lightblue', label: 'Zaineb' },
-    {color: 'pink', label: 'Aziz' },
-    {color: 'lightgreen', label: 'Ali' },
-    {color: 'yellow', label: 'Ali' },
-    {color: 'lightblue', label: 'Ahmed' },
-    {color: 'pink', label: 'Rawan' },
-    {color: 'lightgreen', label: 'Ahmed' },
-    {color: 'yellow', label: 'Rawan' },
-    {color: 'lightblue', label: 'Zaineb' },
-    {color: 'pink', label: 'Zaineb' },
-    {color: 'lightgreen', label: 'Ali' },
-    {color: 'yellow', label: 'Ali' },
-    {color: 'lightblue', label: 'Ahmed' },
-    {color: 'pink', label: 'Rawan' },
-    {color: 'lightgreen', label: 'Ahmed' },
-    {color: 'yellow', label: 'Rawan' },
-    {color: 'lightblue', label: 'Zaineb' },
-    {color: 'pink', label: 'Zaineb' },
-    {color: 'lightgreen', label: 'Ali' },
-    {color: 'yellow', label: 'Ali' },
-    {color: 'lightblue', label: 'Ahmed' },
-    {color: 'pink', label: 'Rawan' },
-    {color: 'lightgreen', label: 'Ahmed' },
-    {color: 'yellow', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Salman' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Raees' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Asad' },
+    {color: 'rgb(31, 30, 30)', label: 'Umer' },
+    {color: 'rgb(31, 30, 30)', label: 'Zaineb' },
+    {color: 'rgb(31, 30, 30)', label: 'Aziz' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Zaineb' },
+    {color: 'rgb(31, 30, 30)', label: 'Zaineb' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Zaineb' },
+    {color: 'rgb(31, 30, 30)', label: 'Zaineb' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ali' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
+    {color: 'rgb(31, 30, 30)', label: 'Ahmed' },
+    {color: 'rgb(31, 30, 30)', label: 'Rawan' },
 
 ]
 const newArray = [];
@@ -172,7 +172,7 @@ const PI = Math.PI
 const TAU = 2 * PI
 const arc = TAU / names.length
 
-const friction = 0.95 // 0.995=soft, 0.99=mid, 0.98=hard
+const friction = 0.995 // 0.995=soft, 0.99=mid, 0.98=hard
 let angVel = 0 // Angular velocity
 let ang = 0 // Angle in radians
 
@@ -214,8 +214,8 @@ function drawName(name, i) {
   ctx.rotate(ang + (TAU / names.length) / 2)
   // console.log(ang)
   ctx.textAlign = 'right'
-  ctx.fillStyle = '#595B83'
-  ctx.font = 'bold 30px sans-serif'
+  ctx.fillStyle = 'rgb(161, 160, 158)'
+  ctx.font = 'bold 25px sans-serif'
   ctx.fillText(name.label, rad - 10, 10)
   //
   ctx.restore()
@@ -225,8 +225,8 @@ function rotate() {
   const name = names[getIndex()]
   ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`
   // console.log(ang)
-  spinEl.textContent = !angVel ? 'SPIN' : name.label
-  spinEl.style.background = name.color
+  // spinEl.textContent = !angVel ? 'SPIN' : name.label
+  // spinEl.style.background = name.color
 }
 
 function frame() {
