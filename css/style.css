@@ -7,29 +7,34 @@
   body {
     height: 100vh;
     /* display: grid; */
-    display: flex;
+    /* display: flex; */
     /* margin: 10px; */
     place-items: center;
-    background-color: #222831;
+    /* background-color: #222831; */
+    background-color: rgba(24,24,27,255);
     overflow: hidden;
+    color: rgba(187,247,208,255);
   }
 
-  lottie-player {
+  /* lottie-player {
     position: absolute;
     bottom: 46%;
     left: 12px;
-  }
+  } */
   
   #wheelOfFortune {
     display: inline-block;
     position: relative;
+    left: 10.5%;
     overflow: hidden;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     
   }
   
   #wheel {
     display: block;
+    position: relative;
+    top: 17%;
   }
   
   #spin {
@@ -40,10 +45,10 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 60%;
-    left: 60%;
+    top: 382px;
+    left: 61%;
     width: 10%;
-    height: 10%;
+    height: 50px;
     margin: -15%;
     background: rgb(139, 52, 52);
     color: rgb(139, 52, 52);
@@ -77,9 +82,23 @@
     z-index: -1;
   }
 
+  #main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+  }
+
+  #list-container {
+    /* background-color: aqua; */
+    width: 500px;
+    position: relative;
+    top: 30px;
+    right: 30px;
+  }
+
   #list {
-    background-color: #22283158;
-    color: #DDDDDD;
+    background-color: #22283118;
+    /* color: #DDDDDD; */
     font-size: 20px;
     margin-right: 70px;
     margin-left: 30px;
@@ -89,6 +108,12 @@
     display: flex;
     flex-direction:column;
     flex-wrap: wrap;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   li {
@@ -101,8 +126,18 @@
   }
 
   .player {
-    margin-left: 135px;
+    /* margin-left: 185px; */
     /* margin-right: 40px; */
-    width: 800px;
-    position: fixed;
+    max-width: 655px;
+    position: absolute;
+    left: 8%;
+    top: 20%;
+  }
+
+  .nav-container {
+    background-color: rgba(24,24,27,255);
+    max-width: 100%;
+    display: flex;
+    position: sticky;
+    color: rgba(134,239,172,255);
   }
